@@ -38,4 +38,28 @@ func main() {
         fmt.Println("")
     }
 
+    // slice 数组
+    s1 := make([]string, 3)
+    s1[0] = "ko ni chi ha"
+    s1[1] = "se kai"
+    s1[2] = "!"
+    s1 = append(s1, "Hello ")
+    s1 = append(s1, "World")
+    fmt.Println("s1 = ", s1)
+    s2 := make([]string, len(s1))
+    copy(s2, s1)
+    s2 = append(s2, "!!!")
+    fmt.Println("s2 = ", s2)
+
+    // 关联数组
+    myMap := make(map[string]string)
+    myMap["Name"] = "Harry"
+    myMap["Surname"] = "Potter"
+    anotherMap := map[string]int{"foo": 1, "bar": 2}
+    fmt.Println("myMap = ", myMap)
+    fmt.Println("anotherMap = ", anotherMap)
+
+    for key, value := range myMap {
+        fmt.Printf("%s -> %s\n", key, value)
+    }
 }
